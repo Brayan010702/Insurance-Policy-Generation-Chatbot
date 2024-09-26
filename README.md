@@ -1,7 +1,7 @@
 # Insurance-Policy-Generation-Chatbot
 In the insurance sector, creating new policies or documents can be a cumbersome and time-consuming task. This project addresses this challenge by developing a chatbot that streamlines the policy creation process, providing accurate and reliable information to customers while optimizing efficiency.
 
-Overview
+## Overview
 The underwriting process, a critical component of the insurance and finance industry, involves assessing and analyzing risks to determine the acceptance and conditions of insurance policies. This project aims to revolutionize the policy generation process through the implementation of an AI-powered chatbot designed to assist insurance companies.
 
 Key Features
