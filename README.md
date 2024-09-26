@@ -1,24 +1,80 @@
-# Insurance-Policy-Generation-Chatbot
-In the insurance sector, creating new policies or documents can be a cumbersome and time-consuming task. This project addresses this challenge by developing a chatbot that streamlines the policy creation process, providing accurate and reliable information to customers while optimizing efficiency.
 
-1. Overview
-The underwriting process, a critical component of the insurance and finance industry, involves assessing and analyzing risks to determine the acceptance and conditions of insurance policies. This project aims to revolutionize the policy generation process through the implementation of an AI-powered chatbot designed to assist insurance companies.
+# Insurance Chatbot Project
 
-2. Key Features
-NLP and LLMs: The chatbot utilizes Natural Language Processing (NLP) and Large Language Models (LLMs) to understand and respond to user inquiries related to insurance policies.
-Data Access: It leverages a database of previous insurance policies to efficiently generate new ones tailored to user needs.
-Real-time Information: The chatbot has the capability to search the internet for the latest news and trends in the insurance industry, summarizing relevant information for users.
-User Interface Deployment: The chatbot can be deployed on various user interfaces, such as websites or mobile applications, allowing users to inquire about specific companies and receive accurate responses.
-Technologies and Tools
-Natural Language Processing (NLP)
-Large Language Models (LLMs)
-Pinecone
-ChatGPT
-ElasticSearch
-Haystack
-LangChain
-HTTP APIs
-Docker
+This chatbot assists users in the LATAM insurance market by answering queries, performing web searches, and optimizing policies based on user input.
 
-3. Conclusion
-This project not only highlights the potential of AI in the insurance industry but also provides an excellent opportunity to work with cutting-edge technologies. By participating in this project, you will develop valuable skills that are in high demand in today’s job market.
+## Project Structure
+
+```
+your_project/
+├── main.py                            # Entry point of the project
+├── config/
+│   └── settings.py                    # Environment variables and database path configuration
+├── prompts/
+│   └── classification_prompt.py       # Classification prompt
+│   └── conversation_prompt.py         # Conversation prompt
+├── chains/
+│   └── classification_chain.py        # Classification chain
+│   └── conversation_chain.py          # Conversation chain
+├── functions/
+│   └── rag_chain.py                   # RAG chain for insurance queries
+│   └── web_search_chain.py            # Web search chain
+│   └── policy_optimizer_chain.py      # Policy optimizer
+├── handlers/
+│   └── router.py                      # Routes queries to the correct chain
+├── requirements.txt                   # Project dependencies
+```
+
+## Setup
+
+1. **Install dependencies**:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. **Create a `.env` file** with the following content:
+
+   ```plaintext
+   DB_PATH= path-to-vector-db
+   API_KEY=your-api-key-here
+   ```
+
+## Running the Chatbot
+
+To start the chatbot, run:
+
+```bash
+chainlit main.py
+```
+
+The chatbot will respond to insurance-related queries, web searches, and policy optimizations based on user input.
+
+## Best Practices for Framing Questions
+
+For the best results, use clear, specific questions that align with the chatbot's capabilities:
+
+1. **Be Direct and Specific**:
+   - Good: *"¿Cuáles son las coberturas de un seguro de auto en Chile?"*
+   - Avoid: *"Dime algo sobre seguros."*
+
+2. **Ask One Question at a Time**:
+   - Good: *"¿Cómo puedo optimizar mi póliza para reducir costos?"*
+   - Avoid: *"¿Cómo optimizo mi póliza y qué coberturas tiene?"*
+
+3. **Use Natural Language**: Frame questions as you would ask a human.
+   - Good: *"¿Qué opciones de seguro de hogar me recomiendas?"*
+   - Avoid: *"Opciones hogar seguro."*
+
+4. **Clarify if Needed**: If the response isn’t what you expect, clarify or provide more context in the follow-up.
+
+## Configuration
+
+- **Database Path**: The path to the database storing embeddings can be updated in the `.env` file using the `DB_PATH` variable.
+- **API Key**: Add the relevant API key for external tools in the `.env` file.
+
+## License
+
+This project is licensed under the MIT License.
+
+
